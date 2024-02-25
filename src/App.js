@@ -4,6 +4,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { HomePage } from "./components/pages/HomePage";
 import { ShowPage } from "./components/pages/Show";
 import BaseLayout from "./components/layouts/BaseLayout";
+import Header from './components/Header';
 
 function App() {
   const router = createBrowserRouter([
@@ -23,6 +24,7 @@ function App() {
 
   return (
     <div>
+      <Header />
       <RouterProvider router={router} />
     </div>
   );
