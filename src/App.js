@@ -10,7 +10,7 @@ function App() {
       element: <HomePage />,
     },
     {
-      path: "create-proposal",
+      path: "create",
       element: <div>World, Hello!!</div>,
     },
   ]);
