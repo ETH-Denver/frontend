@@ -7,7 +7,7 @@ import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode basename="/">
+  <React.StrictMode basename="eth-denver">
     <App />
   </React.StrictMode>
 );
