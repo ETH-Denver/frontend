@@ -1,5 +1,6 @@
 import { Box, Card, Container, Typography } from "@mui/material";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export const ProposalCard = ({
   fundedAmount,
@@ -13,8 +14,12 @@ export const ProposalCard = ({
     fundedAmount - fundingTarget > 0 ? "Funded" : "Incomplete";
 
   const providerStatus = provider ? "Filled" : "Unfilled";
+
+  const navigate = useNavigate();
+
   return (
     <Card
+      onClick={() => navigate("/show")}
       sx={{
         backgroundColor: "#FAF9F6",
         borderColor: "black",
