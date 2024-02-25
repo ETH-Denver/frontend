@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { HomePage } from "./components/pages/HomePage";
-import {ShowPage} from "./show";
+import { ShowPage } from "./components/pages/Show";
 
 function App() {
   const router = createBrowserRouter([
@@ -17,7 +17,7 @@ function App() {
     {
       path: "show",
       element: <ShowPage />,
-    }
+    },
   ]);
 
   return (
