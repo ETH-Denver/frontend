@@ -10,6 +10,7 @@ export const HomePage = () => {
       provider={true}
       executionDate={"02/29/24"}
       expirationDate={"02/28/24"}
+      location={"Denver, CO"}
     />
   ));
   return <Container sx={{ minWidth: "100%" }}>{proposals}</Container>;

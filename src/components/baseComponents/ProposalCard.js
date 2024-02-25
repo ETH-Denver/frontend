@@ -7,6 +7,7 @@ export const ProposalCard = ({
   provider,
   executionDate,
   expirationDate,
+  location,
 }) => {
   const fundingStatus =
     fundedAmount - fundingTarget > 0 ? "Funded" : "Incomplete";
@@ -26,6 +27,10 @@ export const ProposalCard = ({
       <Typography variant="h5">
         Nunc gravida magna sit amet est dictum, a consectetur massa tristique.
       </Typography>
+      <Box sx={{ display: "flex" }}>
+        <Typography>Location:</Typography>
+        <Typography>{location}</Typography>
+      </Box>
       <Container
         sx={{
           display: "flex",
