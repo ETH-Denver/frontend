@@ -7,7 +7,7 @@ import { ShowPage } from "./components/pages/Show";
 function App() {
   const router = createBrowserRouter([
     {
-      path: "/frontend",
+      path: "frontend",
       element: <HomePage />,
     },
     {
