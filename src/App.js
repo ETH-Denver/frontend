@@ -6,7 +6,7 @@ import { HomePage } from "./components/pages/HomePage";
 function App() {
   const router = createBrowserRouter([
     {
-      path: "/frontend",
+      path: "/",
       element: <HomePage />,
     },
     {
