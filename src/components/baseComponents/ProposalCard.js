@@ -1,7 +1,17 @@
-import { Card, Typography } from "@mui/material";
+import { Box, Card, Container, Typography } from "@mui/material";
 import React from "react";
 
-export const ProposalCard = () => {
+export const ProposalCard = ({
+  fundedAmount,
+  fundingTarget,
+  provider,
+  executionDate,
+  expirationDate,
+}) => {
+  const fundingStatus =
+    fundedAmount - fundingTarget > 0 ? "Funded" : "Incomplete";
+
+  const providerStatus = provider ? "Filled" : "Unfilled";
   return (
     <Card
       sx={{
@@ -9,24 +19,58 @@ export const ProposalCard = () => {
         borderColor: "black",
         borderStyle: "solid",
         marginY: 1,
-        marginX: 2,
         filter: "drop-shadow(0px 4px 4px #4444dd)",
         borderRadius: 2,
       }}
     >
-      <Typography variant="h5">Proposal Card</Typography>
-      <Typography>Expiration Date:</Typography>
-      <Typography>02/28/2024</Typography>
-      <Typography>Execution Date:</Typography>
-      <Typography>02/29/2024</Typography>
-      <Typography>Funded Amount:</Typography>
-      <Typography>$5,000</Typography>
-      <Typography>Funding Target:</Typography>
-      <Typography>$15,000</Typography>
-      <Typography>Funding Status:</Typography>
-      <Typography>Funding Open</Typography>
-      <Typography>Provider Status:</Typography>
-      <Typography>Filled</Typography>
+      <Typography variant="h5">
+        Nunc gravida magna sit amet est dictum, a consectetur massa tristique.
+      </Typography>
+      <Container
+        sx={{
+          display: "flex",
+          textAlign: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        <Box sx={{ display: "flex", flexDirection: "column" }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <Typography>Expiration Date:</Typography>
+            <Typography>{expirationDate}</Typography>
+          </Box>
+          <Box>
+            <Typography>Execution Date:</Typography>
+            <Typography>{executionDate}</Typography>
+          </Box>
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <Typography>Funded Amount:</Typography>
+          <Typography>${fundedAmount}</Typography>
+          <Typography>Funding Target:</Typography>
+          <Typography>${fundingTarget}</Typography>
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <Typography>Funding Status:</Typography>
+          <Typography>{fundingStatus}</Typography>
+          <Typography>Provider Status:</Typography>
+          <Typography>{providerStatus}</Typography>
+        </Box>
+      </Container>
     </Card>
   );
 };

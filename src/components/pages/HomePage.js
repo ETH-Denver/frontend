@@ -1,12 +1,16 @@
+import { Container } from "@mui/material";
 import { ProposalCard } from "../baseComponents/ProposalCard";
 
 export const HomePage = () => {
   const mockArray = [1, 2, 3, 4, 5, 6];
-  return (
-    <div className="App">
-      {mockArray.map((item) => (
-        <ProposalCard />
-      ))}
-    </div>
-  );
+  const proposals = mockArray.map((item) => (
+    <ProposalCard
+      fundedAmount={5000}
+      fundingTarget={15000}
+      provider={true}
+      executionDate={"02/29/24"}
+      expirationDate={"02/28/24"}
+    />
+  ));
+  return <Container sx={{ minWidth: "100%" }}>{proposals}</Container>;
 };
