@@ -3,12 +3,13 @@ import "./App.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { HomePage } from "./components/pages/HomePage";
 import { ShowPage } from "./components/pages/Show";
+import BaseLayout from "./components/layouts/BaseLayout";
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "frontend",
-      element: <HomePage />,
+      element: <BaseLayout children={<HomePage />} />,
     },
     {
       path: "create",
