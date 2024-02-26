@@ -24,9 +24,11 @@ export const HomePage = () => {
           textAlign: "center",
         }}
       >
-        <SearchBar />
         <Typography variant="h3">Active Proposals</Typography>
-        <Container sx={{ minWidth: "100%" }}>{proposals}</Container>;
+        <Container sx={{ backgroundColor: "#dcdcdc", paddingTop: 2 }}>
+          <SearchBar />
+          <Container sx={{ minWidth: "100%" }}>{proposals}</Container>;
+        </Container>
       </Container>
     </Container>
   );
