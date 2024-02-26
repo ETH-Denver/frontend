@@ -1,5 +1,6 @@
-import { Container } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import { ProposalCard } from "../baseComponents/ProposalCard";
+import { SearchBar } from "../baseComponents/SearchBar";
 
 export const HomePage = () => {
   const mockArray = [1, 2, 3, 4, 5, 6];
@@ -13,5 +14,20 @@ export const HomePage = () => {
       location={"Denver, CO"}
     />
   ));
-  return <Container sx={{ minWidth: "100%" }}>{proposals}</Container>;
+
+  return (
+    <Container>
+      <Container
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          textAlign: "center",
+        }}
+      >
+        <SearchBar />
+        <Typography variant="h3">Active Proposals</Typography>
+        <Container sx={{ minWidth: "100%" }}>{proposals}</Container>;
+      </Container>
+    </Container>
+  );
 };
