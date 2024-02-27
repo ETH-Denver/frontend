@@ -2,6 +2,7 @@ import { Container, TextField } from "@mui/material";
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { AutoComplete } from "../baseComponents/AutoComplete";
 
 const ProposalForm = () => {
   const [executionDate, setExecutionDate] = useState(new Date());
@@ -10,6 +11,7 @@ const ProposalForm = () => {
 
   return (
     <Container>
+      <AutoComplete />
       <form>
         <TextField
           inputProps={{ maxLength: 12 }}
