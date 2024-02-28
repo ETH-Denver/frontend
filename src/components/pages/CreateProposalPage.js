@@ -21,19 +21,19 @@ const ProposalForm = () => {
 
   return (
     <Container>
-      <Autocomplete
-        style={{ width: "90%" }}
-        apiKey="AIzaSyBkk4pDx-Vz48tU4tJ1iMKMPTcs2_csJt0"
-        onPlaceSelected={(place) => {
-          console.log(place.geometry.location.lat());
-          console.log(place.geometry.location.lng());
-        }}
-        componentRestrictions={{ country: "us" }}
-        options={{
-          types: ["geocode", "establishment"],
-        }}
-      />
       <form onSubmit={handleSubmit}>
+        <Autocomplete
+          style={{ width: "90%" }}
+          apiKey="AIzaSyBkk4pDx-Vz48tU4tJ1iMKMPTcs2_csJt0"
+          onPlaceSelected={(place) => {
+            setLat(place.geometry.location.lat());
+            setLong(place.geometry.location.lng());
+          }}
+          componentRestrictions={{ country: "us" }}
+          options={{
+            types: ["geocode", "establishment"],
+          }}
+        />
         <TextField
           inputProps={{ maxLength: 12 }}
           label="Location"
