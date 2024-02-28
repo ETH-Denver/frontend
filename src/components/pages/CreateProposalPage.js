@@ -24,7 +24,6 @@ const ProposalForm = () => {
       <form onSubmit={handleSubmit}>
         <Autocomplete
           style={{ width: "90%" }}
-          apiKey="AIzaSyBkk4pDx-Vz48tU4tJ1iMKMPTcs2_csJt0"
           onPlaceSelected={(place) => {
             setLat(place.geometry.location.lat());
             setLong(place.geometry.location.lng());
